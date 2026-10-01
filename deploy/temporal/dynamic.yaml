@@ -1,0 +1,3 @@
+# Eager Workflow Start must be on for V1b. Verified in the M0 spike.
+system.enableEagerWorkflowStart:
+  - value: true

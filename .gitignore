@@ -1,0 +1,25 @@
+# Compiled binaries (rebuild with `make image` / `go build`)
+/bin/
+
+# Go build/test artifacts
+*.test
+*.out
+coverage.*
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local env overrides / secrets
+.env
+.env.local
+deploy/compose/docker-compose.override.yml
+
+# Claude Code local session state (not project config)
+.claude/

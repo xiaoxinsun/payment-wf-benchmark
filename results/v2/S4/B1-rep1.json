@@ -1,0 +1,384 @@
+{
+ "variant": "v2",
+ "spec": {
+  "Scenario": "S4",
+  "Label": "B1",
+  "Rate": 15,
+  "DurationS": 15,
+  "WarmupS": 0,
+  "DrainS": 20,
+  "Mix": {
+   "acct_closed": 25,
+   "acct_dormant": 25,
+   "acct_frozen": 25,
+   "acct_not_found": 25
+  },
+  "Mode": "",
+  "StepUp": null,
+  "Seed": 42,
+  "Shards": 0,
+  "SimMs": null,
+  "Cooldown": 8000000000,
+  "Probe": false
+ },
+ "rep": 1,
+ "runId": "r0930151001",
+ "startedAt": "2026-09-30T15:09:58.791438+08:00",
+ "wallS": 17.458802708,
+ "summary": {
+  "runId": "r0930151001",
+  "state": "done",
+  "mode": "",
+  "rate": 15,
+  "sent": 226,
+  "measured": 226,
+  "ingressOk": 226,
+  "ingressErr": 0,
+  "received": 226,
+  "unanswered": 0,
+  "latency": {
+   "n": 226,
+   "p50Ms": 13.739035,
+   "p95Ms": 20.064057,
+   "p99Ms": 24.04464,
+   "p999Ms": 25.458048,
+   "maxMs": 25.458048,
+   "meanMs": 14.362994606194688
+  },
+  "ackLatency": {
+   "n": 226,
+   "p50Ms": 2.507583,
+   "p95Ms": 5.506125,
+   "p99Ms": 7.759667,
+   "p999Ms": 15.058625,
+   "maxMs": 15.058625,
+   "meanMs": 3.007484716814159
+  },
+  "slaBreach": 0,
+  "slaBreachRate": 0,
+  "achievedTps": 15.066666666666666,
+  "outcomes": {
+   "AC01": 53,
+   "AC04": 67,
+   "AC06": 106
+  },
+  "byCategory": {
+   "acct_closed": {
+    "sent": 67,
+    "received": 67,
+    "asExpected": 67,
+    "mismatch": 0,
+    "outcomes": {
+     "AC04": 67
+    },
+    "latency": {
+     "n": 67,
+     "p50Ms": 13.579545,
+     "p95Ms": 18.899554,
+     "p99Ms": 23.095441,
+     "p999Ms": 23.095441,
+     "maxMs": 23.095441,
+     "meanMs": 13.89022011940298
+    }
+   },
+   "acct_dormant": {
+    "sent": 51,
+    "received": 51,
+    "asExpected": 51,
+    "mismatch": 0,
+    "outcomes": {
+     "AC06": 51
+    },
+    "latency": {
+     "n": 51,
+     "p50Ms": 15.108347,
+     "p95Ms": 20.107467,
+     "p99Ms": 24.324689,
+     "p999Ms": 24.324689,
+     "maxMs": 24.324689,
+     "meanMs": 14.68185037254902
+    }
+   },
+   "acct_frozen": {
+    "sent": 55,
+    "received": 55,
+    "asExpected": 55,
+    "mismatch": 0,
+    "outcomes": {
+     "AC06": 55
+    },
+    "latency": {
+     "n": 55,
+     "p50Ms": 14.388024,
+     "p95Ms": 22.768293,
+     "p99Ms": 25.458048,
+     "p999Ms": 25.458048,
+     "maxMs": 25.458048,
+     "meanMs": 14.977817109090909
+    }
+   },
+   "acct_not_found": {
+    "sent": 53,
+    "received": 53,
+    "asExpected": 53,
+    "mismatch": 0,
+    "outcomes": {
+     "AC01": 53
+    },
+    "latency": {
+     "n": 53,
+     "p50Ms": 13.314967,
+     "p95Ms": 20.147893,
+     "p99Ms": 21.173282,
+     "p999Ms": 21.173282,
+     "maxMs": 21.173282,
+     "meanMs": 14.015806094339624
+    }
+   }
+  },
+  "multiReceipts": 0,
+  "doubleAnswered": 0,
+  "dupDeliveries": 0,
+  "dupBadAcks": 0,
+  "stallCount": 0,
+  "stallFirstSchedMs": 0,
+  "stallLastRecvMs": 0,
+  "stallSpanMs": 0,
+  "genLagMaxMs": 5.165172,
+  "timeline": [
+   {
+    "t": 0,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.993672,
+    "p99Ms": 22.768293
+   },
+   {
+    "t": 1,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 16.95343,
+    "p99Ms": 24.04464
+   },
+   {
+    "t": 2,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.752315,
+    "p99Ms": 23.095441
+   },
+   {
+    "t": 3,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.156283,
+    "p99Ms": 21.173282
+   },
+   {
+    "t": 4,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.579545,
+    "p99Ms": 22.05284
+   },
+   {
+    "t": 5,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.548764,
+    "p99Ms": 23.44006
+   },
+   {
+    "t": 6,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.887104,
+    "p99Ms": 16.431356
+   },
+   {
+    "t": 7,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 11.435371,
+    "p99Ms": 17.223289
+   },
+   {
+    "t": 8,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.139963,
+    "p99Ms": 25.458048
+   },
+   {
+    "t": 9,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.411393,
+    "p99Ms": 20.064057
+   },
+   {
+    "t": 10,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 11.629446,
+    "p99Ms": 15.391405
+   },
+   {
+    "t": 11,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 12.775076,
+    "p99Ms": 17.268073
+   },
+   {
+    "t": 12,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 13.598004,
+    "p99Ms": 17.853884
+   },
+   {
+    "t": 13,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 16.489097,
+    "p99Ms": 20.147893
+   },
+   {
+    "t": 14,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 16.233484,
+    "p99Ms": 24.324689
+   },
+   {
+    "t": 15,
+    "sent": 1,
+    "recv": 1,
+    "p50Ms": 13.192073,
+    "p99Ms": 13.192073
+   }
+  ]
+ },
+ "verdict": {
+  "pass": true,
+  "acked": 226,
+  "stuckAfterDrain": 0,
+  "lost": 0,
+  "postings": 0,
+  "acceptedSent": 0,
+  "rejectedSent": 226,
+  "unackedRows": 0
+ },
+ "db": {
+  "app": {
+   "xactCommit": 691,
+   "tupInserted": 226,
+   "tupUpdated": 448,
+   "tupDeleted": 0,
+   "walBytes": 147912,
+   "walRecords": 1862,
+   "stmtCalls": 681,
+   "stmtRows": 681
+  },
+  "cbs": {
+   "xactCommit": 232,
+   "tupInserted": 0,
+   "tupUpdated": 314,
+   "tupDeleted": 0,
+   "walBytes": 1788699,
+   "walRecords": 370,
+   "stmtCalls": 229,
+   "stmtRows": 176
+  },
+  "dbos": {
+   "xactCommit": 3211,
+   "tupInserted": 1531,
+   "tupUpdated": 219,
+   "tupDeleted": 0,
+   "walBytes": 1172697,
+   "walRecords": 9709,
+   "stmtCalls": 7439,
+   "stmtRows": 2749
+  }
+ },
+ "perPayment": {
+  "durabilityRowsWritten": 7.743362831858407,
+  "durabilityStatements": 32.915929203539825,
+  "durabilityWalBytes": 5188.924778761062,
+  "durabilityXacts": 14.20796460176991
+ },
+ "resources": {
+  "app-db": {
+   "meanCores": 0.016625,
+   "maxCores": 0.0405,
+   "maxMemMiB": 54.5
+  },
+  "cbs-db": {
+   "meanCores": 0.016075,
+   "maxCores": 0.026699999999999998,
+   "maxMemMiB": 61.3
+  },
+  "dbos-db": {
+   "meanCores": 0.04019999999999999,
+   "maxCores": 0.059000000000000004,
+   "maxMemMiB": 67.66
+  },
+  "grafana": {
+   "meanCores": 0.11810000000000001,
+   "maxCores": 0.25730000000000003,
+   "maxMemMiB": 315.2
+  },
+  "lb": {
+   "meanCores": 0.0025,
+   "maxCores": 0.0043,
+   "maxMemMiB": 11.64
+  },
+  "payment-1": {
+   "meanCores": 0.021949999999999997,
+   "maxCores": 0.029500000000000002,
+   "maxMemMiB": 9.824
+  },
+  "payment-2": {
+   "meanCores": 0.021099999999999997,
+   "maxCores": 0.0282,
+   "maxMemMiB": 11.82
+  },
+  "prometheus": {
+   "meanCores": 0.001825,
+   "maxCores": 0.0032,
+   "maxMemMiB": 48.49
+  },
+  "sim-aml": {
+   "meanCores": 0,
+   "maxCores": 0,
+   "maxMemMiB": 5.16
+  },
+  "sim-cbs": {
+   "meanCores": 0.0030499999999999998,
+   "maxCores": 0.0045000000000000005,
+   "maxMemMiB": 8.637
+  },
+  "sim-npc": {
+   "meanCores": 0.00655,
+   "maxCores": 0.0106,
+   "maxMemMiB": 12.21
+  },
+  "toxiproxy": {
+   "meanCores": 0.04425,
+   "maxCores": 0.0697,
+   "maxMemMiB": 11.95
+  }
+ },
+ "ledger": {
+  "legSum": 0,
+  "postings": 0,
+  "legs": 0,
+  "postingsNotTwoLegs": 0,
+  "duplicateRefs": 0,
+  "settlementBalanceFen": 0,
+  "customerBalanceFen": 0,
+  "balancesReconcile": true,
+  "ok": true
+ }
+}

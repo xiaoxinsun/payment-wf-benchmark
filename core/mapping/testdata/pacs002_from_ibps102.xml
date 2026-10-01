@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10"><FIToFIPmtStsRpt><GrpHdr><MsgId>R901735abb970ed1d4231ca7b9aba8b</MsgId><CreDtTm>2026-09-28T10:00:01+08:00</CreDtTm></GrpHdr><OrgnlGrpInfAndSts><OrgnlMsgId>M20260928000001</OrgnlMsgId><OrgnlMsgNmId>ibps.101.001.01</OrgnlMsgNmId></OrgnlGrpInfAndSts><TxInfAndSts><OrgnlEndToEndId>E20260928000001</OrgnlEndToEndId><TxSts>RJCT</TxSts><StsRsnInf><Rsn><Cd>AC01</Cd></Rsn></StsRsnInf><AccptncDtTm>2026-09-28T10:00:01+08:00</AccptncDtTm></TxInfAndSts></FIToFIPmtStsRpt></Document>

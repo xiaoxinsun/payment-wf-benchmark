@@ -1,0 +1,7 @@
+# Per-attempt timeouts. Identical for V1a, V1b and V2 (fairness rule 2). Read by core/config.
+step3_validate: 500ms
+step4_screen: 800ms
+step4b_review_poll: 800ms
+step5_post: 1s
+step5_status_query: 500ms
+step6_respond: 1s

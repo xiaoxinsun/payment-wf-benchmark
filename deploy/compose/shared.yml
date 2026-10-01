@@ -1,0 +1,120 @@
+name: ibps
+# Components shared by V1 and V2. Postgres settings are identical across all four databases.
+x-postgres: &postgres
+  image: postgres:16.15
+  command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+  restart: "no"
+  shm_size: 1g
+  volumes:
+    - ../postgres/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+    - ../postgres/init-extensions.sql:/docker-entrypoint-initdb.d/10-extensions.sql:ro
+  healthcheck:
+    test: ["CMD-SHELL", "pg_isready -U bench"]
+    interval: 2s
+    timeout: 3s
+    retries: 30
+
+services:
+  cbs-db:
+    <<: *postgres
+    environment: {POSTGRES_USER: bench, POSTGRES_PASSWORD: bench, POSTGRES_DB: cbs}
+    volumes:
+      - cbs-db-data:/var/lib/postgresql/data
+      - ../postgres/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      - ../postgres/init-extensions.sql:/docker-entrypoint-initdb.d/10-extensions.sql:ro
+    ports: ["5434:5432"]
+    cpus: 1.0
+    mem_limit: 3g
+
+  app-db:
+    <<: *postgres
+    environment: {POSTGRES_USER: bench, POSTGRES_PASSWORD: bench, POSTGRES_DB: app}
+    volumes:
+      - app-db-data:/var/lib/postgresql/data
+      - ../postgres/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      - ../postgres/init-extensions.sql:/docker-entrypoint-initdb.d/10-extensions.sql:ro
+    ports: ["5435:5432"]
+    cpus: 1.0
+    mem_limit: 3g
+
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy:2.12.0
+    command: ["-host=0.0.0.0", "-config=/config/toxiproxy.json"]
+    volumes:
+      - ../toxiproxy/toxiproxy.json:/config/toxiproxy.json:ro
+    ports: ["8474:8474"]
+    cpus: 0.25
+    mem_limit: 256m
+
+  prometheus:
+    image: prom/prometheus:v3.15.0
+    volumes:
+      - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports: ["9090:9090"]
+    cpus: 0.5
+    mem_limit: 512m
+
+  grafana:
+    image: grafana/grafana:13.2.2
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+    volumes:
+      - ../grafana/provisioning:/etc/grafana/provisioning:ro
+    ports: ["3000:3000"]
+    cpus: 0.5
+    mem_limit: 512m
+
+  sim-cbs:
+    image: ibps-bench:local
+    build: {context: ../.., dockerfile: deploy/Dockerfile}
+    command: ["sim-cbs"]
+    depends_on:
+      cbs-db: {condition: service_healthy}
+    environment:
+      CBS_DB_URL: postgres://bench:bench@cbs-db:5432/cbs?sslmode=disable&pool_max_conns=30
+      LATENCY_MS: "5"
+      ACCOUNTS: "50000"
+      GOMAXPROCS: "1"
+    ports: ["8001:8001"]
+    cpus: 0.5
+    mem_limit: 512m
+
+  sim-aml:
+    image: ibps-bench:local
+    command: ["sim-aml"]
+    environment: {LATENCY_MS: "10", GOMAXPROCS: "1"}
+    ports: ["8002:8002"]
+    cpus: 0.3
+    mem_limit: 256m
+
+  sim-npc:
+    image: ibps-bench:local
+    command: ["sim-npc"]
+    environment: {LATENCY_MS: "3", ACCOUNTS: "50000", GOMAXPROCS: "1"}
+    ports: ["9000:9000"]
+    cpus: 0.7
+    mem_limit: 1g
+
+  lb:
+    image: nginx:1.29-alpine
+    environment:
+      UPSTREAM_1: ${UPSTREAM_1:-payment-1}
+      UPSTREAM_2: ${UPSTREAM_2:-payment-2}
+    volumes:
+      - ../nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+    ports: ["8080:80"]
+    cpus: 0.25
+    mem_limit: 128m
+
+networks:
+  default:
+    ipam:
+      config: [{subnet: 172.30.0.0/24}]
+
+# Postgres data lives on ordinary disk-backed named volumes so that I9/I12 (durability-store restart) test
+# real crash recovery. Docker Desktop's VM disk can stall for seconds under sustained fsync load (H1 in
+# docs/versions.md); this is a laptop characteristic, reported as a caveat, and affects both engines equally.
+volumes:
+  cbs-db-data:
+  app-db-data:

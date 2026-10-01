@@ -1,0 +1,55 @@
+name: ibps
+# V2 (DBOS) durability stack. Use together with shared.yml. Never run alongside v1.yml.
+services:
+  dbos-db:
+    image: postgres:16.15
+    command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+    shm_size: 1g
+    environment: {POSTGRES_USER: dbos, POSTGRES_PASSWORD: dbos, POSTGRES_DB: dbos_sys}
+    volumes:
+      - dbos-db-data:/var/lib/postgresql/data
+      - ../postgres/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      - ../postgres/init-extensions.sql:/docker-entrypoint-initdb.d/10-extensions.sql:ro
+    ports: ["5433:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dbos"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    cpus: 3.0
+    mem_limit: 8g
+
+  payment-1: &payment
+    image: ibps-bench:local
+    command: ["payment-dbos"]
+    depends_on:
+      dbos-db: {condition: service_healthy}
+      app-db: {condition: service_healthy}
+    environment: &payenv
+      CBS_URL: http://toxiproxy:18001
+      AML_URL: http://toxiproxy:18002
+      NPC_URL: http://sim-npc:9000
+      APP_DB_URL: postgres://bench:bench@app-db:5432/app?sslmode=disable&pool_max_conns=20
+      DBOS_DB_URL: postgres://dbos:dbos@toxiproxy:18004/dbos_sys?sslmode=disable&pool_max_conns=20
+      GOMAXPROCS: "1"
+      GOMEMLIMIT: 700MiB
+      GOGC: "100"
+      SETTLEMENT_SHARDS: ${SETTLEMENT_SHARDS:-16}
+      CODE_FAULT_SUFFIX: ${CODE_FAULT_SUFFIX:-}
+      DBOS__VMID: payment-1
+    cpus: 1.0
+    mem_limit: 1g
+    networks:
+      default: {ipv4_address: 172.30.0.201}
+  payment-2:
+    <<: *payment
+    networks:
+      default: {ipv4_address: 172.30.0.202}
+    environment:
+      <<: *payenv
+      DBOS__VMID: payment-2
+  lb:
+    depends_on: [payment-1, payment-2]
+
+volumes:
+  dbos-db-data:

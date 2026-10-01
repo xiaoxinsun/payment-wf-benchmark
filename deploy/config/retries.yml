@@ -1,0 +1,7 @@
+# Retry policies. Business errors are never retried. Identical for all variants.
+# max_attempts: 0 means unbounded (DBOS: expressed as a very large max-retries value, see docs/versions.md).
+step3_validate: {initial: 50ms, factor: 2, max_interval: 2s, max_attempts: 4, bounded_by_sla: true}
+step4_screen:   {initial: 50ms, factor: 2, max_interval: 2s, max_attempts: 4, bounded_by_sla: true}
+step4b_review:  {poll_every: 250ms, bounded_by_sla: true}
+step5_post:     {initial: 50ms, factor: 2, max_interval: 2s, max_attempts: 0, query_status_first_on_timeout: true}
+step6_respond:  {initial: 50ms, factor: 2, max_interval: 2s, max_attempts: 0}

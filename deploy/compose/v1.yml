@@ -1,0 +1,70 @@
+name: ibps
+# V1 (Temporal) durability stack. Use together with shared.yml. Never run alongside v2.yml.
+services:
+  temporal-db:
+    image: postgres:16.15
+    command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+    shm_size: 1g
+    environment: {POSTGRES_USER: temporal, POSTGRES_PASSWORD: temporal, POSTGRES_DB: temporal}
+    volumes:
+      - temporal-db-data:/var/lib/postgresql/data
+      - ../postgres/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+      - ../postgres/init-extensions.sql:/docker-entrypoint-initdb.d/10-extensions.sql:ro
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U temporal"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    cpus: 3.0
+    mem_limit: 8g
+
+  temporal-schema:
+    image: temporalio/admin-tools:1.32.0
+    depends_on:
+      temporal-db: {condition: service_healthy}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        T="temporal-sql-tool --plugin postgres12 --ep temporal-db -p 5432 -u temporal --pw temporal"
+        $$T --db temporal create-database || true
+        $$T --db temporal setup-schema -v 0.0 || true
+        $$T --db temporal update-schema -d /etc/temporal/schema/postgresql/v12/temporal/versioned
+        $$T --db temporal_visibility create-database || true
+        $$T --db temporal_visibility setup-schema -v 0.0 || true
+        $$T --db temporal_visibility update-schema -d /etc/temporal/schema/postgresql/v12/visibility/versioned
+    restart: "no"
+
+  temporal-ns:
+    image: temporalio/admin-tools:1.32.0
+    depends_on:
+      temporal: {condition: service_started}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        for i in $$(seq 1 60); do
+          temporal operator namespace describe --address temporal:7233 -n default >/dev/null 2>&1 && exit 0
+          temporal operator namespace create --address temporal:7233 --retention 1d -n default >/dev/null 2>&1 && exit 0
+          sleep 1
+        done
+        exit 1
+    restart: "no"
+
+  temporal:
+    image: temporalio/server:1.32.0
+    depends_on:
+      temporal-schema: {condition: service_completed_successfully}
+    environment:
+      TEMPORAL_ROOT: /etc/temporal
+      TEMPORAL_CONFIG_DIR: config
+      TEMPORAL_ENVIRONMENT: docker
+    volumes:
+      - ../temporal/docker.yaml:/etc/temporal/config/docker.yaml:ro
+      - ../temporal/dynamic.yaml:/etc/temporal/dynamicconfig/dynamic.yaml:ro
+    ports: ["7233:7233", "8000:8000"]
+    cpus: 3.0
+    mem_limit: 3g
+
+volumes:
+  temporal-db-data:

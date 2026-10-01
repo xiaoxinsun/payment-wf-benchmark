@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ibps102 xmlns="urn:cncc:ibps:synthetic:ibps.102.001.01"><MsgId>R901735abb970ed1d4231ca7b9aba8b</MsgId><OrgnlMsgId>M20260928000001</OrgnlMsgId><OrgnlMsgTp>ibps.101.001.01</OrgnlMsgTp><OrgnlEndToEndId>E20260928000001</OrgnlEndToEndId><PrcSts>rejected</PrcSts><RjctCd>PRTRY-AC01</RjctCd><PrcDtTm>2026-09-28T10:00:01+08:00</PrcDtTm></Ibps102>

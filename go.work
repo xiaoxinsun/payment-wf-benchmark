@@ -1,0 +1,11 @@
+go 1.27.1
+
+use (
+	./core
+	./engine-dbos
+	./engine-temporal
+	./harness
+	./sims
+	./spikes/dbos
+	./spikes/temporal
+)

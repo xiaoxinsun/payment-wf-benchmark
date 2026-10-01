@@ -1,0 +1,31 @@
+version: "2"
+
+linters:
+  default: none
+  enable:
+    - govet
+    - staticcheck
+    - errcheck
+    - ineffassign
+    - unused
+    - depguard
+  settings:
+    depguard:
+      rules:
+        # Working rule: keep engine imports out of core. Enforced here and by `make check-core-deps`.
+        core-no-engines:
+          list-mode: lax
+          files:
+            - "**/core/**"
+          deny:
+            - pkg: go.temporal.io
+              desc: core must not import Temporal
+            - pkg: github.com/dbos-inc/dbos-transact-golang
+              desc: core must not import DBOS
+  exclusions:
+    rules:
+      # Test doubles (fake HTTP servers, setup helpers) deliberately ignore write/decode errors on the
+      # response side of a mock; the assertions are on the request the code under test makes, not on the
+      # mock's own plumbing.
+      - path: _test\.go
+        linters: [errcheck]

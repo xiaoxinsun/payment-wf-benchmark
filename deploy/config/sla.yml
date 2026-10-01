@@ -1,0 +1,5 @@
+# Assumed values, to be replaced from the CNCC interface spec before M8.
+sla_budget: 5s
+amount_limit_cny_fen: 100000000   # CNY 1,000,000.00 in fen
+our_bank_code: "313000000000"     # placeholder 12-digit CNAPS code
+settlement_shards: 16             # S5 runs with 1

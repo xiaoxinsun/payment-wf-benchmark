@@ -1,0 +1,6 @@
+[
+  {"name": "cbs",     "listen": "0.0.0.0:18001", "upstream": "sim-cbs:8001",  "enabled": true},
+  {"name": "aml",     "listen": "0.0.0.0:18002", "upstream": "sim-aml:8002",  "enabled": true},
+  {"name": "temporal","listen": "0.0.0.0:18003", "upstream": "temporal:7233", "enabled": true},
+  {"name": "dbosdb",  "listen": "0.0.0.0:18004", "upstream": "dbos-db:5432",  "enabled": true}
+]

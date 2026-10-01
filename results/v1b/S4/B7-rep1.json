@@ -1,0 +1,365 @@
+{
+ "variant": "v1b",
+ "spec": {
+  "Scenario": "S4",
+  "Label": "B7",
+  "Rate": 15,
+  "DurationS": 15,
+  "WarmupS": 0,
+  "DrainS": 20,
+  "Mix": {
+   "review_slow": 100
+  },
+  "Mode": "",
+  "StepUp": null,
+  "Seed": 42,
+  "Shards": 0,
+  "SimMs": null,
+  "Cooldown": 8000000000,
+  "Probe": false
+ },
+ "rep": 1,
+ "runId": "r0930145407",
+ "startedAt": "2026-09-30T14:53:53.922284+08:00",
+ "wallS": 22.265150417,
+ "summary": {
+  "runId": "r0930145407",
+  "state": "done",
+  "mode": "",
+  "rate": 15,
+  "sent": 226,
+  "measured": 226,
+  "ingressOk": 226,
+  "ingressErr": 0,
+  "received": 226,
+  "unanswered": 0,
+  "latency": {
+   "n": 226,
+   "p50Ms": 5253.280348,
+   "p95Ms": 5263.838317,
+   "p99Ms": 5316.777959,
+   "p999Ms": 5376.983706,
+   "maxMs": 5376.983706,
+   "meanMs": 5173.966452659297
+  },
+  "ackLatency": {
+   "n": 226,
+   "p50Ms": 3.847125,
+   "p95Ms": 21.57275,
+   "p99Ms": 114.255375,
+   "p999Ms": 115.128333,
+   "maxMs": 115.128333,
+   "meanMs": 7.32344983628318
+  },
+  "slaBreach": 226,
+  "slaBreachRate": 1,
+  "achievedTps": 15.066666666666666,
+  "outcomes": {
+   "RR04": 226
+  },
+  "byCategory": {
+   "review_slow": {
+    "sent": 226,
+    "received": 226,
+    "asExpected": 226,
+    "mismatch": 0,
+    "outcomes": {
+     "RR04": 226
+    },
+    "latency": {
+     "n": 226,
+     "p50Ms": 5253.280348,
+     "p95Ms": 5263.838317,
+     "p99Ms": 5316.777959,
+     "p999Ms": 5376.983706,
+     "maxMs": 5376.983706,
+     "meanMs": 5173.966452659297
+    }
+   }
+  },
+  "multiReceipts": 0,
+  "doubleAnswered": 0,
+  "dupDeliveries": 0,
+  "dupBadAcks": 0,
+  "stallCount": 226,
+  "stallFirstSchedMs": 0.000458,
+  "stallLastRecvMs": 20250.117843,
+  "stallSpanMs": 20250.117385,
+  "genLagMaxMs": 135.832141,
+  "timeline": [
+   {
+    "t": 0,
+    "sent": 15,
+    "recv": 0,
+    "p50Ms": 0,
+    "p99Ms": 0
+   },
+   {
+    "t": 1,
+    "sent": 15,
+    "recv": 0,
+    "p50Ms": 0,
+    "p99Ms": 0
+   },
+   {
+    "t": 2,
+    "sent": 15,
+    "recv": 0,
+    "p50Ms": 0,
+    "p99Ms": 0
+   },
+   {
+    "t": 3,
+    "sent": 15,
+    "recv": 0,
+    "p50Ms": 0,
+    "p99Ms": 0
+   },
+   {
+    "t": 4,
+    "sent": 15,
+    "recv": 0,
+    "p50Ms": 0,
+    "p99Ms": 0
+   },
+   {
+    "t": 5,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 5049.258921,
+    "p99Ms": 5151.378963
+   },
+   {
+    "t": 6,
+    "sent": 15,
+    "recv": 14,
+    "p50Ms": 5090.018979,
+    "p99Ms": 5267.285598
+   },
+   {
+    "t": 7,
+    "sent": 15,
+    "recv": 16,
+    "p50Ms": 5044.54565,
+    "p99Ms": 5262.599197
+   },
+   {
+    "t": 8,
+    "sent": 15,
+    "recv": 12,
+    "p50Ms": 5260.206663,
+    "p99Ms": 5376.983706
+   },
+   {
+    "t": 9,
+    "sent": 15,
+    "recv": 18,
+    "p50Ms": 5100.325925,
+    "p99Ms": 5316.777959
+   },
+   {
+    "t": 10,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 5030.86993,
+    "p99Ms": 5259.876021
+   },
+   {
+    "t": 11,
+    "sent": 15,
+    "recv": 14,
+    "p50Ms": 5117.625408,
+    "p99Ms": 5273.435859
+   },
+   {
+    "t": 12,
+    "sent": 15,
+    "recv": 14,
+    "p50Ms": 5110.885536,
+    "p99Ms": 5259.988535
+   },
+   {
+    "t": 13,
+    "sent": 15,
+    "recv": 17,
+    "p50Ms": 5060.691596,
+    "p99Ms": 5259.417301
+   },
+   {
+    "t": 14,
+    "sent": 15,
+    "recv": 12,
+    "p50Ms": 5254.918893,
+    "p99Ms": 5260.55298
+   },
+   {
+    "t": 15,
+    "sent": 1,
+    "recv": 15,
+    "p50Ms": 5257.772153,
+    "p99Ms": 5262.943148
+   },
+   {
+    "t": 16,
+    "sent": 0,
+    "recv": 15,
+    "p50Ms": 5256.03316,
+    "p99Ms": 5261.052328
+   },
+   {
+    "t": 17,
+    "sent": 0,
+    "recv": 15,
+    "p50Ms": 5254.718008,
+    "p99Ms": 5263.009339
+   },
+   {
+    "t": 18,
+    "sent": 0,
+    "recv": 15,
+    "p50Ms": 5259.443433,
+    "p99Ms": 5272.067349
+   },
+   {
+    "t": 19,
+    "sent": 0,
+    "recv": 15,
+    "p50Ms": 5258.975988,
+    "p99Ms": 5263.838317
+   },
+   {
+    "t": 20,
+    "sent": 0,
+    "recv": 4,
+    "p50Ms": 5257.575449,
+    "p99Ms": 5262.068617
+   }
+  ]
+ },
+ "verdict": {
+  "pass": true,
+  "acked": 226,
+  "stuckAfterDrain": 0,
+  "lost": 0,
+  "postings": 0,
+  "acceptedSent": 0,
+  "rejectedSent": 226,
+  "unackedRows": 0
+ },
+ "db": {
+  "app": {
+   "xactCommit": 926,
+   "tupInserted": 226,
+   "tupUpdated": 673,
+   "tupDeleted": 0,
+   "walBytes": 207075,
+   "walRecords": 2671,
+   "stmtCalls": 907,
+   "stmtRows": 907
+  },
+  "cbs": {
+   "xactCommit": 232,
+   "tupInserted": 0,
+   "tupUpdated": 0,
+   "tupDeleted": 0,
+   "walBytes": 6282055,
+   "walRecords": 2172,
+   "stmtCalls": 229,
+   "stmtRows": 229
+  },
+  "temporal": {
+   "xactCommit": 20720,
+   "tupInserted": 6403,
+   "tupUpdated": 4580,
+   "tupDeleted": 2278,
+   "walBytes": 24094143,
+   "walRecords": 92391,
+   "stmtCalls": 29953,
+   "stmtRows": 23819
+  }
+ },
+ "perPayment": {
+  "durabilityRowsWritten": 58.676991150442475,
+  "durabilityStatements": 132.5353982300885,
+  "durabilityWalBytes": 106611.25221238939,
+  "durabilityXacts": 91.68141592920354
+ },
+ "resources": {
+  "app-db": {
+   "meanCores": 0.02726,
+   "maxCores": 0.042300000000000004,
+   "maxMemMiB": 58.68
+  },
+  "cbs-db": {
+   "meanCores": 0.01998,
+   "maxCores": 0.0401,
+   "maxMemMiB": 65.22
+  },
+  "grafana": {
+   "meanCores": 0.01956,
+   "maxCores": 0.0605,
+   "maxMemMiB": 346.8
+  },
+  "lb": {
+   "meanCores": 0.0018599999999999999,
+   "maxCores": 0.0044,
+   "maxMemMiB": 11.08
+  },
+  "payment-1": {
+   "meanCores": 0.03246,
+   "maxCores": 0.049100000000000005,
+   "maxMemMiB": 23.9
+  },
+  "payment-2": {
+   "meanCores": 0.02902,
+   "maxCores": 0.0441,
+   "maxMemMiB": 23.82
+  },
+  "prometheus": {
+   "meanCores": 0.018699999999999998,
+   "maxCores": 0.0296,
+   "maxMemMiB": 81.38
+  },
+  "sim-aml": {
+   "meanCores": 0.018500000000000003,
+   "maxCores": 0.0297,
+   "maxMemMiB": 10.34
+  },
+  "sim-cbs": {
+   "meanCores": 0.00408,
+   "maxCores": 0.0118,
+   "maxMemMiB": 9.32
+  },
+  "sim-npc": {
+   "meanCores": 0.006500000000000001,
+   "maxCores": 0.0149,
+   "maxMemMiB": 11.61
+  },
+  "temporal": {
+   "meanCores": 0.23154,
+   "maxCores": 0.2697,
+   "maxMemMiB": 285.5
+  },
+  "temporal-db": {
+   "meanCores": 0.14880000000000002,
+   "maxCores": 0.1972,
+   "maxMemMiB": 213.2
+  },
+  "toxiproxy": {
+   "meanCores": 0.04034000000000001,
+   "maxCores": 0.0623,
+   "maxMemMiB": 20.29
+  }
+ },
+ "ledger": {
+  "legSum": 0,
+  "postings": 0,
+  "legs": 0,
+  "postingsNotTwoLegs": 0,
+  "duplicateRefs": 0,
+  "settlementBalanceFen": 0,
+  "customerBalanceFen": 0,
+  "balancesReconcile": true,
+  "ok": true
+ }
+}

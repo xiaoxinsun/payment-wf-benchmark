@@ -1,0 +1,340 @@
+{
+ "variant": "v1a",
+ "spec": {
+  "Scenario": "S4",
+  "Label": "B2",
+  "Rate": 15,
+  "DurationS": 15,
+  "WarmupS": 0,
+  "DrainS": 20,
+  "Mix": {
+   "name_mismatch": 100
+  },
+  "Mode": "",
+  "StepUp": null,
+  "Seed": 42,
+  "Shards": 0,
+  "SimMs": null,
+  "Cooldown": 8000000000,
+  "Probe": false
+ },
+ "rep": 1,
+ "runId": "r0930130027",
+ "startedAt": "2026-09-30T13:00:13.27801+08:00",
+ "wallS": 16.349397958,
+ "summary": {
+  "runId": "r0930130027",
+  "state": "done",
+  "mode": "",
+  "rate": 15,
+  "sent": 226,
+  "measured": 226,
+  "ingressOk": 226,
+  "ingressErr": 0,
+  "received": 226,
+  "unanswered": 0,
+  "latency": {
+   "n": 226,
+   "p50Ms": 27.763574,
+   "p95Ms": 34.7201,
+   "p99Ms": 40.430306,
+   "p999Ms": 58.550833,
+   "maxMs": 58.550833,
+   "meanMs": 28.897072460177007
+  },
+  "ackLatency": {
+   "n": 226,
+   "p50Ms": 2.948417,
+   "p95Ms": 3.561291,
+   "p99Ms": 6.483416,
+   "p999Ms": 13.295917,
+   "maxMs": 13.295917,
+   "meanMs": 3.009110084070797
+  },
+  "slaBreach": 0,
+  "slaBreachRate": 0,
+  "achievedTps": 15.066666666666666,
+  "outcomes": {
+   "BE01": 226
+  },
+  "byCategory": {
+   "name_mismatch": {
+    "sent": 226,
+    "received": 226,
+    "asExpected": 226,
+    "mismatch": 0,
+    "outcomes": {
+     "BE01": 226
+    },
+    "latency": {
+     "n": 226,
+     "p50Ms": 27.763574,
+     "p95Ms": 34.7201,
+     "p99Ms": 40.430306,
+     "p999Ms": 58.550833,
+     "maxMs": 58.550833,
+     "meanMs": 28.897072460177007
+    }
+   }
+  },
+  "multiReceipts": 0,
+  "doubleAnswered": 0,
+  "dupDeliveries": 0,
+  "dupBadAcks": 0,
+  "stallCount": 0,
+  "stallFirstSchedMs": 0,
+  "stallLastRecvMs": 0,
+  "stallSpanMs": 0,
+  "genLagMaxMs": 10.03117,
+  "timeline": [
+   {
+    "t": 0,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 27.705171,
+    "p99Ms": 58.550833
+   },
+   {
+    "t": 1,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 29.545429,
+    "p99Ms": 39.604894
+   },
+   {
+    "t": 2,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 27.077776,
+    "p99Ms": 34.378863
+   },
+   {
+    "t": 3,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 30.730117,
+    "p99Ms": 44.022704
+   },
+   {
+    "t": 4,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 27.870963,
+    "p99Ms": 34.637958
+   },
+   {
+    "t": 5,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 30.242637,
+    "p99Ms": 38.576598
+   },
+   {
+    "t": 6,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 26.530988,
+    "p99Ms": 33.505732
+   },
+   {
+    "t": 7,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 30.613491,
+    "p99Ms": 33.912745
+   },
+   {
+    "t": 8,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 30.899669,
+    "p99Ms": 35.15246
+   },
+   {
+    "t": 9,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 28.529471,
+    "p99Ms": 40.430306
+   },
+   {
+    "t": 10,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 26.258321,
+    "p99Ms": 31.3829
+   },
+   {
+    "t": 11,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 27.449244,
+    "p99Ms": 34.395991
+   },
+   {
+    "t": 12,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 26.230215,
+    "p99Ms": 33.785377
+   },
+   {
+    "t": 13,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 26.79264,
+    "p99Ms": 31.13447
+   },
+   {
+    "t": 14,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 27.160444,
+    "p99Ms": 34.783772
+   },
+   {
+    "t": 15,
+    "sent": 1,
+    "recv": 1,
+    "p50Ms": 24.378948,
+    "p99Ms": 24.378948
+   }
+  ]
+ },
+ "verdict": {
+  "pass": true,
+  "acked": 226,
+  "stuckAfterDrain": 0,
+  "lost": 0,
+  "postings": 0,
+  "acceptedSent": 0,
+  "rejectedSent": 226,
+  "unackedRows": 0
+ },
+ "db": {
+  "app": {
+   "xactCommit": 700,
+   "tupInserted": 226,
+   "tupUpdated": 458,
+   "tupDeleted": 0,
+   "walBytes": 180048,
+   "walRecords": 1898,
+   "stmtCalls": 681,
+   "stmtRows": 681
+  },
+  "cbs": {
+   "xactCommit": 231,
+   "tupInserted": 0,
+   "tupUpdated": 0,
+   "tupDeleted": 0,
+   "walBytes": 100,
+   "walRecords": 2,
+   "stmtCalls": 229,
+   "stmtRows": 229
+  },
+  "temporal": {
+   "xactCommit": 25201,
+   "tupInserted": 10455,
+   "tupUpdated": 7247,
+   "tupDeleted": 2193,
+   "walBytes": 27391771,
+   "walRecords": 108300,
+   "stmtCalls": 43821,
+   "stmtRows": 37948
+  }
+ },
+ "perPayment": {
+  "durabilityRowsWritten": 88.03097345132744,
+  "durabilityStatements": 193.89823008849558,
+  "durabilityWalBytes": 121202.52654867257,
+  "durabilityXacts": 111.50884955752213
+ },
+ "resources": {
+  "app-db": {
+   "meanCores": 0.015950000000000002,
+   "maxCores": 0.0315,
+   "maxMemMiB": 59.84
+  },
+  "cbs-db": {
+   "meanCores": 0.01875,
+   "maxCores": 0.0216,
+   "maxMemMiB": 68.7
+  },
+  "grafana": {
+   "meanCores": 0.004575,
+   "maxCores": 0.006999999999999999,
+   "maxMemMiB": 386.9
+  },
+  "ingress-1": {
+   "meanCores": 0.0022,
+   "maxCores": 0.0032,
+   "maxMemMiB": 15.9
+  },
+  "ingress-2": {
+   "meanCores": 0.00215,
+   "maxCores": 0.003,
+   "maxMemMiB": 13.76
+  },
+  "lb": {
+   "meanCores": 0.0013750000000000001,
+   "maxCores": 0.0019,
+   "maxMemMiB": 11.29
+  },
+  "prometheus": {
+   "meanCores": 0.001,
+   "maxCores": 0.0017000000000000001,
+   "maxMemMiB": 87.07
+  },
+  "sim-aml": {
+   "meanCores": 0,
+   "maxCores": 0,
+   "maxMemMiB": 10.89
+  },
+  "sim-cbs": {
+   "meanCores": 0.0022500000000000003,
+   "maxCores": 0.0032,
+   "maxMemMiB": 11.89
+  },
+  "sim-npc": {
+   "meanCores": 0.00425,
+   "maxCores": 0.006,
+   "maxMemMiB": 15.59
+  },
+  "temporal": {
+   "meanCores": 0.297525,
+   "maxCores": 0.37549999999999994,
+   "maxMemMiB": 273.5
+  },
+  "temporal-db": {
+   "meanCores": 0.16965,
+   "maxCores": 0.19579999999999997,
+   "maxMemMiB": 379.3
+  },
+  "toxiproxy": {
+   "meanCores": 0.02565,
+   "maxCores": 0.035,
+   "maxMemMiB": 13.64
+  },
+  "worker-1": {
+   "meanCores": 0.018425,
+   "maxCores": 0.024900000000000002,
+   "maxMemMiB": 19.34
+  },
+  "worker-2": {
+   "meanCores": 0.0158,
+   "maxCores": 0.0218,
+   "maxMemMiB": 18.75
+  }
+ },
+ "ledger": {
+  "legSum": 0,
+  "postings": 0,
+  "legs": 0,
+  "postingsNotTwoLegs": 0,
+  "duplicateRefs": 0,
+  "settlementBalanceFen": 0,
+  "customerBalanceFen": 0,
+  "balancesReconcile": true,
+  "ok": true
+ }
+}

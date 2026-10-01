@@ -1,0 +1,11 @@
+# Default business mix (percent of arrivals).
+happy_path: 94
+account_reject: 3
+aml_hit: 1
+review_fast: 1
+review_slow: 1
+# Simulator latency baseline (fairness rule 5). S0 overrides all three to 0ms.
+sim_latency:
+  cbs: 5ms
+  aml: 10ms
+  npc: 3ms

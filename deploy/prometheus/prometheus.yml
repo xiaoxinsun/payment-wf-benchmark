@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+scrape_configs:
+  - job_name: prometheus
+    static_configs: [{targets: ["localhost:9090"]}]
+  - job_name: temporal
+    static_configs: [{targets: ["temporal:8000"]}]
+  - job_name: payment
+    dns_sd_configs: [{names: ["payment"], type: A, port: 9100}]
+  - job_name: sims
+    static_configs: [{targets: ["sim-npc:9100", "sim-cbs:9100", "sim-aml:9100"]}]

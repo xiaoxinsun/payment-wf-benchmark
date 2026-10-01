@@ -1,0 +1,340 @@
+{
+ "variant": "v1a",
+ "spec": {
+  "Scenario": "S4",
+  "Label": "B5",
+  "Rate": 15,
+  "DurationS": 15,
+  "WarmupS": 0,
+  "DrainS": 20,
+  "Mix": {
+   "aml_hit": 100
+  },
+  "Mode": "",
+  "StepUp": null,
+  "Seed": 42,
+  "Shards": 0,
+  "SimMs": null,
+  "Cooldown": 8000000000,
+  "Probe": false
+ },
+ "rep": 1,
+ "runId": "r0930130640",
+ "startedAt": "2026-09-30T13:06:25.805498+08:00",
+ "wallS": 17.354140042,
+ "summary": {
+  "runId": "r0930130640",
+  "state": "done",
+  "mode": "",
+  "rate": 15,
+  "sent": 226,
+  "measured": 226,
+  "ingressOk": 226,
+  "ingressErr": 0,
+  "received": 226,
+  "unanswered": 0,
+  "latency": {
+   "n": 226,
+   "p50Ms": 48.513699,
+   "p95Ms": 56.135363,
+   "p99Ms": 64.105582,
+   "p999Ms": 83.716583,
+   "maxMs": 83.716583,
+   "meanMs": 49.31430981858408
+  },
+  "ackLatency": {
+   "n": 226,
+   "p50Ms": 2.363541,
+   "p95Ms": 3.423625,
+   "p99Ms": 4.360083,
+   "p999Ms": 14.205959,
+   "maxMs": 14.205959,
+   "meanMs": 2.5410793008849555
+  },
+  "slaBreach": 0,
+  "slaBreachRate": 0,
+  "achievedTps": 15.066666666666666,
+  "outcomes": {
+   "RR04": 226
+  },
+  "byCategory": {
+   "aml_hit": {
+    "sent": 226,
+    "received": 226,
+    "asExpected": 226,
+    "mismatch": 0,
+    "outcomes": {
+     "RR04": 226
+    },
+    "latency": {
+     "n": 226,
+     "p50Ms": 48.513699,
+     "p95Ms": 56.135363,
+     "p99Ms": 64.105582,
+     "p999Ms": 83.716583,
+     "maxMs": 83.716583,
+     "meanMs": 49.31430981858408
+    }
+   }
+  },
+  "multiReceipts": 0,
+  "doubleAnswered": 0,
+  "dupDeliveries": 0,
+  "dupBadAcks": 0,
+  "stallCount": 0,
+  "stallFirstSchedMs": 0,
+  "stallLastRecvMs": 0,
+  "stallSpanMs": 0,
+  "genLagMaxMs": 7.224266,
+  "timeline": [
+   {
+    "t": 0,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 49.556051,
+    "p99Ms": 83.716583
+   },
+   {
+    "t": 1,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 47.915558,
+    "p99Ms": 59.468724
+   },
+   {
+    "t": 2,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 47.729854,
+    "p99Ms": 71.849696
+   },
+   {
+    "t": 3,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 46.479198,
+    "p99Ms": 64.105582
+   },
+   {
+    "t": 4,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 48.894967,
+    "p99Ms": 54.833211
+   },
+   {
+    "t": 5,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 49.417849,
+    "p99Ms": 59.601594
+   },
+   {
+    "t": 6,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 48.364986,
+    "p99Ms": 59.020402
+   },
+   {
+    "t": 7,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 47.695286,
+    "p99Ms": 52.829115
+   },
+   {
+    "t": 8,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 48.131959,
+    "p99Ms": 52.467634
+   },
+   {
+    "t": 9,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 47.809093,
+    "p99Ms": 54.480853
+   },
+   {
+    "t": 10,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 47.139651,
+    "p99Ms": 55.652689
+   },
+   {
+    "t": 11,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 48.279911,
+    "p99Ms": 60.801496
+   },
+   {
+    "t": 12,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 49.138757,
+    "p99Ms": 56.627385
+   },
+   {
+    "t": 13,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 50.786437,
+    "p99Ms": 63.664972
+   },
+   {
+    "t": 14,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 50.283271,
+    "p99Ms": 54.169608
+   },
+   {
+    "t": 15,
+    "sent": 1,
+    "recv": 1,
+    "p50Ms": 62.00024,
+    "p99Ms": 62.00024
+   }
+  ]
+ },
+ "verdict": {
+  "pass": true,
+  "acked": 226,
+  "stuckAfterDrain": 0,
+  "lost": 0,
+  "postings": 0,
+  "acceptedSent": 0,
+  "rejectedSent": 226,
+  "unackedRows": 0
+ },
+ "db": {
+  "app": {
+   "xactCommit": 893,
+   "tupInserted": 219,
+   "tupUpdated": 688,
+   "tupDeleted": 0,
+   "walBytes": 275649,
+   "walRecords": 2439,
+   "stmtCalls": 908,
+   "stmtRows": 907
+  },
+  "cbs": {
+   "xactCommit": 227,
+   "tupInserted": 0,
+   "tupUpdated": 33,
+   "tupDeleted": 0,
+   "walBytes": 51414,
+   "walRecords": 44,
+   "stmtCalls": 229,
+   "stmtRows": 229
+  },
+  "temporal": {
+   "xactCommit": 31324,
+   "tupInserted": 14067,
+   "tupUpdated": 9993,
+   "tupDeleted": 3165,
+   "walBytes": 31194195,
+   "walRecords": 128157,
+   "stmtCalls": 58749,
+   "stmtRows": 52814
+  }
+ },
+ "perPayment": {
+  "durabilityRowsWritten": 120.46460176991151,
+  "durabilityStatements": 259.9513274336283,
+  "durabilityWalBytes": 138027.4115044248,
+  "durabilityXacts": 138.60176991150442
+ },
+ "resources": {
+  "app-db": {
+   "meanCores": 0.022924999999999994,
+   "maxCores": 0.0326,
+   "maxMemMiB": 59.8
+  },
+  "cbs-db": {
+   "meanCores": 0.014249999999999999,
+   "maxCores": 0.0332,
+   "maxMemMiB": 68.89
+  },
+  "grafana": {
+   "meanCores": 0.004125,
+   "maxCores": 0.0066,
+   "maxMemMiB": 387.3
+  },
+  "ingress-1": {
+   "meanCores": 0.002075,
+   "maxCores": 0.0034999999999999996,
+   "maxMemMiB": 13.46
+  },
+  "ingress-2": {
+   "meanCores": 0.00205,
+   "maxCores": 0.0029,
+   "maxMemMiB": 13.95
+  },
+  "lb": {
+   "meanCores": 0.001275,
+   "maxCores": 0.0017000000000000001,
+   "maxMemMiB": 11.22
+  },
+  "prometheus": {
+   "meanCores": 0.004225,
+   "maxCores": 0.0123,
+   "maxMemMiB": 92.27
+  },
+  "sim-aml": {
+   "meanCores": 0.00185,
+   "maxCores": 0.0026,
+   "maxMemMiB": 11.73
+  },
+  "sim-cbs": {
+   "meanCores": 0.0025,
+   "maxCores": 0.0034999999999999996,
+   "maxMemMiB": 12.82
+  },
+  "sim-npc": {
+   "meanCores": 0.004849999999999999,
+   "maxCores": 0.0060999999999999995,
+   "maxMemMiB": 15.09
+  },
+  "temporal": {
+   "meanCores": 0.39160000000000006,
+   "maxCores": 0.4818,
+   "maxMemMiB": 290.7
+  },
+  "temporal-db": {
+   "meanCores": 0.207775,
+   "maxCores": 0.2386,
+   "maxMemMiB": 416.7
+  },
+  "toxiproxy": {
+   "meanCores": 0.0369,
+   "maxCores": 0.052199999999999996,
+   "maxMemMiB": 13.45
+  },
+  "worker-1": {
+   "meanCores": 0.023850000000000003,
+   "maxCores": 0.0325,
+   "maxMemMiB": 18.88
+  },
+  "worker-2": {
+   "meanCores": 0.024675,
+   "maxCores": 0.035699999999999996,
+   "maxMemMiB": 19.55
+  }
+ },
+ "ledger": {
+  "legSum": 0,
+  "postings": 0,
+  "legs": 0,
+  "postingsNotTwoLegs": 0,
+  "duplicateRefs": 0,
+  "settlementBalanceFen": 0,
+  "customerBalanceFen": 0,
+  "balancesReconcile": true,
+  "ok": true
+ }
+}

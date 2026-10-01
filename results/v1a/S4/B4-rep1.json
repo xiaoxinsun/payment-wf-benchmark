@@ -1,0 +1,340 @@
+{
+ "variant": "v1a",
+ "spec": {
+  "Scenario": "S4",
+  "Label": "B4",
+  "Rate": 15,
+  "DurationS": 15,
+  "WarmupS": 0,
+  "DrainS": 20,
+  "Mix": {
+   "amount_over": 100
+  },
+  "Mode": "",
+  "StepUp": null,
+  "Seed": 42,
+  "Shards": 0,
+  "SimMs": null,
+  "Cooldown": 8000000000,
+  "Probe": false
+ },
+ "rep": 1,
+ "runId": "r0930130145",
+ "startedAt": "2026-09-30T13:01:31.232803+08:00",
+ "wallS": 17.364578208,
+ "summary": {
+  "runId": "r0930130145",
+  "state": "done",
+  "mode": "",
+  "rate": 15,
+  "sent": 226,
+  "measured": 226,
+  "ingressOk": 226,
+  "ingressErr": 0,
+  "received": 226,
+  "unanswered": 0,
+  "latency": {
+   "n": 226,
+   "p50Ms": 15.628538,
+   "p95Ms": 22.788872,
+   "p99Ms": 25.049463,
+   "p999Ms": 45.633083,
+   "maxMs": 45.633083,
+   "meanMs": 16.577473619469018
+  },
+  "ackLatency": {
+   "n": 226,
+   "p50Ms": 3.186041,
+   "p95Ms": 3.943417,
+   "p99Ms": 6.561875,
+   "p999Ms": 16.007416,
+   "maxMs": 16.007416,
+   "meanMs": 3.293433623893805
+  },
+  "slaBreach": 0,
+  "slaBreachRate": 0,
+  "achievedTps": 15.066666666666666,
+  "outcomes": {
+   "AM02": 226
+  },
+  "byCategory": {
+   "amount_over": {
+    "sent": 226,
+    "received": 226,
+    "asExpected": 226,
+    "mismatch": 0,
+    "outcomes": {
+     "AM02": 226
+    },
+    "latency": {
+     "n": 226,
+     "p50Ms": 15.628538,
+     "p95Ms": 22.788872,
+     "p99Ms": 25.049463,
+     "p999Ms": 45.633083,
+     "maxMs": 45.633083,
+     "meanMs": 16.577473619469018
+    }
+   }
+  },
+  "multiReceipts": 0,
+  "doubleAnswered": 0,
+  "dupDeliveries": 0,
+  "dupBadAcks": 0,
+  "stallCount": 0,
+  "stallFirstSchedMs": 0,
+  "stallLastRecvMs": 0,
+  "stallSpanMs": 0,
+  "genLagMaxMs": 9.980422,
+  "timeline": [
+   {
+    "t": 0,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 17.116133,
+    "p99Ms": 45.633083
+   },
+   {
+    "t": 1,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 17.609895,
+    "p99Ms": 25.166471
+   },
+   {
+    "t": 2,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 16.60294,
+    "p99Ms": 23.595816
+   },
+   {
+    "t": 3,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.656742,
+    "p99Ms": 22.788872
+   },
+   {
+    "t": 4,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 16.017212,
+    "p99Ms": 19.988881
+   },
+   {
+    "t": 5,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.853142,
+    "p99Ms": 24.27797
+   },
+   {
+    "t": 6,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.05682,
+    "p99Ms": 18.44107
+   },
+   {
+    "t": 7,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.331789,
+    "p99Ms": 24.707706
+   },
+   {
+    "t": 8,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.528592,
+    "p99Ms": 25.049463
+   },
+   {
+    "t": 9,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 16.307719,
+    "p99Ms": 22.378762
+   },
+   {
+    "t": 10,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.286484,
+    "p99Ms": 20.959897
+   },
+   {
+    "t": 11,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.759498,
+    "p99Ms": 23.372865
+   },
+   {
+    "t": 12,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.349634,
+    "p99Ms": 20.263877
+   },
+   {
+    "t": 13,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 15.098431,
+    "p99Ms": 16.960932
+   },
+   {
+    "t": 14,
+    "sent": 15,
+    "recv": 15,
+    "p50Ms": 14.42878,
+    "p99Ms": 17.734649
+   },
+   {
+    "t": 15,
+    "sent": 1,
+    "recv": 1,
+    "p50Ms": 14.031531,
+    "p99Ms": 14.031531
+   }
+  ]
+ },
+ "verdict": {
+  "pass": true,
+  "acked": 226,
+  "stuckAfterDrain": 0,
+  "lost": 0,
+  "postings": 0,
+  "acceptedSent": 0,
+  "rejectedSent": 226,
+  "unackedRows": 0
+ },
+ "db": {
+  "app": {
+   "xactCommit": 698,
+   "tupInserted": 226,
+   "tupUpdated": 450,
+   "tupDeleted": 0,
+   "walBytes": 169688,
+   "walRecords": 2069,
+   "stmtCalls": 681,
+   "stmtRows": 681
+  },
+  "cbs": {
+   "xactCommit": 10,
+   "tupInserted": 0,
+   "tupUpdated": 0,
+   "tupDeleted": 0,
+   "walBytes": 50,
+   "walRecords": 1,
+   "stmtCalls": 3,
+   "stmtRows": 3
+  },
+  "temporal": {
+   "xactCommit": 22828,
+   "tupInserted": 8584,
+   "tupUpdated": 5845,
+   "tupDeleted": 1963,
+   "walBytes": 24706499,
+   "walRecords": 97045,
+   "stmtCalls": 37048,
+   "stmtRows": 31371
+  }
+ },
+ "perPayment": {
+  "durabilityRowsWritten": 72.53097345132744,
+  "durabilityStatements": 163.92920353982302,
+  "durabilityWalBytes": 109320.79203539823,
+  "durabilityXacts": 101.00884955752213
+ },
+ "resources": {
+  "app-db": {
+   "meanCores": 0.00895,
+   "maxCores": 0.0252,
+   "maxMemMiB": 59.7
+  },
+  "cbs-db": {
+   "meanCores": 0.011175,
+   "maxCores": 0.0235,
+   "maxMemMiB": 68.63
+  },
+  "grafana": {
+   "meanCores": 0.005,
+   "maxCores": 0.0088,
+   "maxMemMiB": 387.5
+  },
+  "ingress-1": {
+   "meanCores": 0.002625,
+   "maxCores": 0.0037,
+   "maxMemMiB": 15.4
+  },
+  "ingress-2": {
+   "meanCores": 0.002325,
+   "maxCores": 0.0032,
+   "maxMemMiB": 13.71
+  },
+  "lb": {
+   "meanCores": 0.0014500000000000001,
+   "maxCores": 0.002,
+   "maxMemMiB": 11.48
+  },
+  "prometheus": {
+   "meanCores": 0.009675,
+   "maxCores": 0.0346,
+   "maxMemMiB": 92.41
+  },
+  "sim-aml": {
+   "meanCores": 0,
+   "maxCores": 0,
+   "maxMemMiB": 11.03
+  },
+  "sim-cbs": {
+   "meanCores": 0.00015,
+   "maxCores": 0.0006,
+   "maxMemMiB": 11.79
+  },
+  "sim-npc": {
+   "meanCores": 0.005599999999999999,
+   "maxCores": 0.0074,
+   "maxMemMiB": 15.82
+  },
+  "temporal": {
+   "meanCores": 0.2622,
+   "maxCores": 0.29359999999999997,
+   "maxMemMiB": 277.7
+  },
+  "temporal-db": {
+   "meanCores": 0.154025,
+   "maxCores": 0.1865,
+   "maxMemMiB": 415.2
+  },
+  "toxiproxy": {
+   "meanCores": 0.02255,
+   "maxCores": 0.030600000000000002,
+   "maxMemMiB": 13.48
+  },
+  "worker-1": {
+   "meanCores": 0.014275,
+   "maxCores": 0.0196,
+   "maxMemMiB": 18.29
+  },
+  "worker-2": {
+   "meanCores": 0.015199999999999998,
+   "maxCores": 0.0223,
+   "maxMemMiB": 17.65
+  }
+ },
+ "ledger": {
+  "legSum": 0,
+  "postings": 0,
+  "legs": 0,
+  "postingsNotTwoLegs": 0,
+  "duplicateRefs": 0,
+  "settlementBalanceFen": 0,
+  "customerBalanceFen": 0,
+  "balancesReconcile": true,
+  "ok": true
+ }
+}

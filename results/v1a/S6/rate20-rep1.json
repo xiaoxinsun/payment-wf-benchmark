@@ -1,0 +1,812 @@
+{
+ "variant": "v1a",
+ "spec": {
+  "Scenario": "S6",
+  "Label": "rate20",
+  "Rate": 20,
+  "DurationS": 60,
+  "WarmupS": 20,
+  "DrainS": 20,
+  "Mix": {
+   "acct_closed": 0.6,
+   "acct_dormant": 0.6,
+   "acct_frozen": 0.6,
+   "acct_not_found": 0.6,
+   "aml_hit": 1,
+   "happy": 94,
+   "name_mismatch": 0.6,
+   "review_fast": 1,
+   "review_slow": 1
+  },
+  "Mode": "",
+  "StepUp": null,
+  "Seed": 1,
+  "Shards": 0,
+  "SimMs": null,
+  "Cooldown": 10000000000,
+  "Probe": false
+ },
+ "rep": 1,
+ "runId": "r0930125802",
+ "startedAt": "2026-09-30T12:57:47.967723+08:00",
+ "wallS": 81.587839666,
+ "summary": {
+  "runId": "r0930125802",
+  "state": "done",
+  "mode": "",
+  "rate": 20,
+  "sent": 1600,
+  "measured": 1200,
+  "ingressOk": 1600,
+  "ingressErr": 0,
+  "received": 1200,
+  "unanswered": 0,
+  "latency": {
+   "n": 1200,
+   "p50Ms": 65.243453,
+   "p95Ms": 84.854054,
+   "p99Ms": 1135.036575,
+   "p999Ms": 5029.878444,
+   "maxMs": 5034.322439,
+   "meanMs": 120.09693835333344
+  },
+  "ackLatency": {
+   "n": 1200,
+   "p50Ms": 2.415,
+   "p95Ms": 3.52175,
+   "p99Ms": 5.625958,
+   "p999Ms": 13.223,
+   "maxMs": 14.672458,
+   "meanMs": 2.5739114016666687
+  },
+  "slaBreach": 10,
+  "slaBreachRate": 0.008333333333333333,
+  "achievedTps": 20,
+  "outcomes": {
+   "AC01": 18,
+   "AC04": 9,
+   "AC06": 12,
+   "ACCP": 1124,
+   "BE01": 9,
+   "RR04": 28
+  },
+  "byCategory": {
+   "acct_closed": {
+    "sent": 9,
+    "received": 9,
+    "asExpected": 9,
+    "mismatch": 0,
+    "outcomes": {
+     "AC04": 9
+    },
+    "latency": {
+     "n": 9,
+     "p50Ms": 25.020536,
+     "p95Ms": 26.812679,
+     "p99Ms": 26.812679,
+     "p999Ms": 26.812679,
+     "maxMs": 26.812679,
+     "meanMs": 25.51316955555556
+    }
+   },
+   "acct_dormant": {
+    "sent": 10,
+    "received": 10,
+    "asExpected": 10,
+    "mismatch": 0,
+    "outcomes": {
+     "AC06": 10
+    },
+    "latency": {
+     "n": 10,
+     "p50Ms": 25.320683,
+     "p95Ms": 40.372612,
+     "p99Ms": 40.372612,
+     "p999Ms": 40.372612,
+     "maxMs": 40.372612,
+     "meanMs": 26.670446399999996
+    }
+   },
+   "acct_frozen": {
+    "sent": 2,
+    "received": 2,
+    "asExpected": 2,
+    "mismatch": 0,
+    "outcomes": {
+     "AC06": 2
+    },
+    "latency": {
+     "n": 2,
+     "p50Ms": 24.123181,
+     "p95Ms": 24.780572,
+     "p99Ms": 24.780572,
+     "p999Ms": 24.780572,
+     "maxMs": 24.780572,
+     "meanMs": 24.451876499999997
+    }
+   },
+   "acct_not_found": {
+    "sent": 18,
+    "received": 18,
+    "asExpected": 18,
+    "mismatch": 0,
+    "outcomes": {
+     "AC01": 18
+    },
+    "latency": {
+     "n": 18,
+     "p50Ms": 25.58774,
+     "p95Ms": 36.833185,
+     "p99Ms": 36.833185,
+     "p999Ms": 36.833185,
+     "maxMs": 36.833185,
+     "meanMs": 26.921147777777772
+    }
+   },
+   "aml_hit": {
+    "sent": 18,
+    "received": 18,
+    "asExpected": 18,
+    "mismatch": 0,
+    "outcomes": {
+     "RR04": 18
+    },
+    "latency": {
+     "n": 18,
+     "p50Ms": 47.549309,
+     "p95Ms": 53.051034,
+     "p99Ms": 53.051034,
+     "p999Ms": 53.051034,
+     "maxMs": 53.051034,
+     "meanMs": 47.838392055555545
+    }
+   },
+   "happy": {
+    "sent": 1109,
+    "received": 1109,
+    "asExpected": 1109,
+    "mismatch": 0,
+    "outcomes": {
+     "ACCP": 1109
+    },
+    "latency": {
+     "n": 1109,
+     "p50Ms": 65.346408,
+     "p95Ms": 80.213699,
+     "p99Ms": 93.920227,
+     "p999Ms": 177.25106,
+     "maxMs": 185.588685,
+     "meanMs": 67.41664669251585
+    }
+   },
+   "name_mismatch": {
+    "sent": 9,
+    "received": 9,
+    "asExpected": 9,
+    "mismatch": 0,
+    "outcomes": {
+     "BE01": 9
+    },
+    "latency": {
+     "n": 9,
+     "p50Ms": 25.770307,
+     "p95Ms": 26.434076,
+     "p99Ms": 26.434076,
+     "p999Ms": 26.434076,
+     "maxMs": 26.434076,
+     "meanMs": 25.62567988888889
+    }
+   },
+   "review_fast": {
+    "sent": 15,
+    "received": 15,
+    "asExpected": 15,
+    "mismatch": 0,
+    "outcomes": {
+     "ACCP": 15
+    },
+    "latency": {
+     "n": 15,
+     "p50Ms": 1130.023321,
+     "p95Ms": 1144.924399,
+     "p99Ms": 1144.924399,
+     "p999Ms": 1144.924399,
+     "maxMs": 1144.924399,
+     "meanMs": 1131.8133848666666
+    }
+   },
+   "review_slow": {
+    "sent": 10,
+    "received": 10,
+    "asExpected": 10,
+    "mismatch": 0,
+    "outcomes": {
+     "RR04": 10
+    },
+    "latency": {
+     "n": 10,
+     "p50Ms": 5024.691483,
+     "p95Ms": 5034.322439,
+     "p99Ms": 5034.322439,
+     "p999Ms": 5034.322439,
+     "maxMs": 5034.322439,
+     "meanMs": 5025.253449000001
+    }
+   }
+  },
+  "multiReceipts": 0,
+  "doubleAnswered": 0,
+  "dupDeliveries": 0,
+  "dupBadAcks": 0,
+  "stallCount": 10,
+  "stallFirstSchedMs": 3550.000709,
+  "stallLastRecvMs": 57722.386995,
+  "stallSpanMs": 54172.386286,
+  "genLagMaxMs": 4.758262,
+  "timeline": [
+   {
+    "t": 0,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 63.885343,
+    "p99Ms": 80.928176
+   },
+   {
+    "t": 1,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.16726,
+    "p99Ms": 79.988344
+   },
+   {
+    "t": 2,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 65.010635,
+    "p99Ms": 1129.631344
+   },
+   {
+    "t": 3,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.963761,
+    "p99Ms": 76.865011
+   },
+   {
+    "t": 4,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.956011,
+    "p99Ms": 79.741303
+   },
+   {
+    "t": 5,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.449845,
+    "p99Ms": 82.85247
+   },
+   {
+    "t": 6,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.064596,
+    "p99Ms": 84.854054
+   },
+   {
+    "t": 7,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.95222,
+    "p99Ms": 70.535054
+   },
+   {
+    "t": 8,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 64.45293,
+    "p99Ms": 5027.710054
+   },
+   {
+    "t": 9,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.755555,
+    "p99Ms": 88.695513
+   },
+   {
+    "t": 10,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.156264,
+    "p99Ms": 78.418431
+   },
+   {
+    "t": 11,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.125181,
+    "p99Ms": 74.697306
+   },
+   {
+    "t": 12,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 65.54564,
+    "p99Ms": 1130.546265
+   },
+   {
+    "t": 13,
+    "sent": 20,
+    "recv": 17,
+    "p50Ms": 66.360932,
+    "p99Ms": 72.714223
+   },
+   {
+    "t": 14,
+    "sent": 20,
+    "recv": 22,
+    "p50Ms": 65.785057,
+    "p99Ms": 1136.509349
+   },
+   {
+    "t": 15,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.710725,
+    "p99Ms": 83.972683
+   },
+   {
+    "t": 16,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.502433,
+    "p99Ms": 86.441433
+   },
+   {
+    "t": 17,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.707892,
+    "p99Ms": 75.425934
+   },
+   {
+    "t": 18,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 64.032309,
+    "p99Ms": 5026.948392
+   },
+   {
+    "t": 19,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.659476,
+    "p99Ms": 96.647435
+   },
+   {
+    "t": 20,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 70.340185,
+    "p99Ms": 185.588685
+   },
+   {
+    "t": 21,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.969561,
+    "p99Ms": 86.819935
+   },
+   {
+    "t": 22,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.278228,
+    "p99Ms": 87.211686
+   },
+   {
+    "t": 23,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 64.176687,
+    "p99Ms": 74.367312
+   },
+   {
+    "t": 24,
+    "sent": 20,
+    "recv": 18,
+    "p50Ms": 65.029187,
+    "p99Ms": 77.066354
+   },
+   {
+    "t": 25,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 66.746604,
+    "p99Ms": 84.448021
+   },
+   {
+    "t": 26,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.13848,
+    "p99Ms": 66.903563
+   },
+   {
+    "t": 27,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 66.217439,
+    "p99Ms": 5027.429022
+   },
+   {
+    "t": 28,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.454314,
+    "p99Ms": 87.273814
+   },
+   {
+    "t": 29,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 65.853439,
+    "p99Ms": 5034.322439
+   },
+   {
+    "t": 30,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.543815,
+    "p99Ms": 5021.33519
+   },
+   {
+    "t": 31,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 65.423441,
+    "p99Ms": 5023.728815
+   },
+   {
+    "t": 32,
+    "sent": 20,
+    "recv": 22,
+    "p50Ms": 66.271441,
+    "p99Ms": 5024.691483
+   },
+   {
+    "t": 33,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.447608,
+    "p99Ms": 88.0874
+   },
+   {
+    "t": 34,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.17815,
+    "p99Ms": 74.077734
+   },
+   {
+    "t": 35,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 66.648734,
+    "p99Ms": 89.374942
+   },
+   {
+    "t": 36,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.062609,
+    "p99Ms": 83.257943
+   },
+   {
+    "t": 37,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.855901,
+    "p99Ms": 72.761193
+   },
+   {
+    "t": 38,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.657193,
+    "p99Ms": 88.206443
+   },
+   {
+    "t": 39,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.19036,
+    "p99Ms": 94.205111
+   },
+   {
+    "t": 40,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.428695,
+    "p99Ms": 5029.878444
+   },
+   {
+    "t": 41,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.554653,
+    "p99Ms": 1133.599487
+   },
+   {
+    "t": 42,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 66.438154,
+    "p99Ms": 1129.67207
+   },
+   {
+    "t": 43,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 66.417029,
+    "p99Ms": 1130.023321
+   },
+   {
+    "t": 44,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.226321,
+    "p99Ms": 71.365738
+   },
+   {
+    "t": 45,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 64.95653,
+    "p99Ms": 1128.429739
+   },
+   {
+    "t": 46,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 66.199781,
+    "p99Ms": 1130.254572
+   },
+   {
+    "t": 47,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.56274,
+    "p99Ms": 68.243448
+   },
+   {
+    "t": 48,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.192615,
+    "p99Ms": 88.839948
+   },
+   {
+    "t": 49,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 65.416948,
+    "p99Ms": 5014.104365
+   },
+   {
+    "t": 50,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 66.227699,
+    "p99Ms": 87.822907
+   },
+   {
+    "t": 51,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 63.991825,
+    "p99Ms": 73.486908
+   },
+   {
+    "t": 52,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.346408,
+    "p99Ms": 1135.036575
+   },
+   {
+    "t": 53,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 65.871534,
+    "p99Ms": 73.812701
+   },
+   {
+    "t": 54,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 66.398034,
+    "p99Ms": 1128.633993
+   },
+   {
+    "t": 55,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 65.643785,
+    "p99Ms": 1127.778493
+   },
+   {
+    "t": 56,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 64.726369,
+    "p99Ms": 70.390702
+   },
+   {
+    "t": 57,
+    "sent": 20,
+    "recv": 21,
+    "p50Ms": 64.894786,
+    "p99Ms": 5022.386286
+   },
+   {
+    "t": 58,
+    "sent": 20,
+    "recv": 20,
+    "p50Ms": 65.760245,
+    "p99Ms": 71.692661
+   },
+   {
+    "t": 59,
+    "sent": 20,
+    "recv": 19,
+    "p50Ms": 64.708287,
+    "p99Ms": 102.353537
+   },
+   {
+    "t": 60,
+    "sent": 0,
+    "recv": 2,
+    "p50Ms": 63.982954,
+    "p99Ms": 1134.566995
+   }
+  ]
+ },
+ "verdict": {
+  "pass": true,
+  "acked": 1600,
+  "stuckAfterDrain": 0,
+  "lost": 0,
+  "postings": 1501,
+  "acceptedSent": 1501,
+  "rejectedSent": 99,
+  "unackedRows": 0
+ },
+ "db": {
+  "app": {
+   "xactCommit": 7835,
+   "tupInserted": 1597,
+   "tupUpdated": 6215,
+   "tupDeleted": 0,
+   "walBytes": 1601986,
+   "walRecords": 20817,
+   "stmtCalls": 7839,
+   "stmtRows": 7839
+  },
+  "cbs": {
+   "xactCommit": 3126,
+   "tupInserted": 4471,
+   "tupUpdated": 2993,
+   "tupDeleted": 1,
+   "walBytes": 6547334,
+   "walRecords": 19372,
+   "stmtCalls": 12110,
+   "stmtRows": 10588
+  },
+  "temporal": {
+   "xactCommit": 263011,
+   "tupInserted": 121860,
+   "tupUpdated": 85161,
+   "tupDeleted": 61678,
+   "walBytes": 256826958,
+   "walRecords": 1098047,
+   "stmtCalls": 499865,
+   "stmtRows": 498544
+  }
+ },
+ "perPayment": {
+  "durabilityRowsWritten": 223.91583333333332,
+  "durabilityStatements": 416.5541666666667,
+  "durabilityWalBytes": 214022.465,
+  "durabilityXacts": 219.17583333333334
+ },
+ "resources": {
+  "app-db": {
+   "meanCores": 0.018252941176470593,
+   "maxCores": 0.0308,
+   "maxMemMiB": 60.01
+  },
+  "cbs-db": {
+   "meanCores": 0.017405882352941174,
+   "maxCores": 0.028900000000000002,
+   "maxMemMiB": 67.71
+  },
+  "grafana": {
+   "meanCores": 0.004111764705882353,
+   "maxCores": 0.0087,
+   "maxMemMiB": 401.2
+  },
+  "ingress-1": {
+   "meanCores": 0.0034823529411764707,
+   "maxCores": 0.004699999999999999,
+   "maxMemMiB": 16.31
+  },
+  "ingress-2": {
+   "meanCores": 0.0035294117647058825,
+   "maxCores": 0.005600000000000001,
+   "maxMemMiB": 16.07
+  },
+  "lb": {
+   "meanCores": 0.0024411764705882357,
+   "maxCores": 0.0038,
+   "maxMemMiB": 11.27
+  },
+  "prometheus": {
+   "meanCores": 0.0008941176470588237,
+   "maxCores": 0.0021,
+   "maxMemMiB": 97.29
+  },
+  "sim-aml": {
+   "meanCores": 0.0036117647058823525,
+   "maxCores": 0.005,
+   "maxMemMiB": 11.78
+  },
+  "sim-cbs": {
+   "meanCores": 0.009958823529411765,
+   "maxCores": 0.0125,
+   "maxMemMiB": 12.27
+  },
+  "sim-npc": {
+   "meanCores": 0.007105882352941176,
+   "maxCores": 0.0084,
+   "maxMemMiB": 15.67
+  },
+  "temporal": {
+   "meanCores": 0.7179235294117648,
+   "maxCores": 1.0806,
+   "maxMemMiB": 479.4
+  },
+  "temporal-db": {
+   "meanCores": 0.37063529411764706,
+   "maxCores": 0.4192,
+   "maxMemMiB": 426.4
+  },
+  "toxiproxy": {
+   "meanCores": 0.0823294117647059,
+   "maxCores": 0.1234,
+   "maxMemMiB": 14.14
+  },
+  "worker-1": {
+   "meanCores": 0.05148823529411766,
+   "maxCores": 0.058899999999999994,
+   "maxMemMiB": 20.83
+  },
+  "worker-2": {
+   "meanCores": 0.05272941176470588,
+   "maxCores": 0.0611,
+   "maxMemMiB": 20.77
+  }
+ },
+ "ledger": {
+  "legSum": 0,
+  "postings": 1501,
+  "legs": 3002,
+  "postingsNotTwoLegs": 0,
+  "duplicateRefs": 0,
+  "settlementBalanceFen": -374947108,
+  "customerBalanceFen": 374947108,
+  "balancesReconcile": true,
+  "ok": true
+ }
+}

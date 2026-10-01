@@ -1,0 +1,32 @@
+name: ibps
+# V1b: Temporal optimised. Ingress and worker co-located in one process on one client, eager start.
+x-common: &common
+  image: ibps-bench:local
+  depends_on: {temporal-ns: {condition: service_completed_successfully}, app-db: {condition: service_healthy}}
+services:
+  payment-1: &payment
+    <<: *common
+    command: ["payment-temporal"]
+    environment: &payenv
+      CBS_URL: http://toxiproxy:18001
+      AML_URL: http://toxiproxy:18002
+      NPC_URL: http://sim-npc:9000
+      APP_DB_URL: postgres://bench:bench@app-db:5432/app?sslmode=disable&pool_max_conns=20
+      GOMAXPROCS: "1"
+      GOMEMLIMIT: 700MiB
+      GOGC: "100"
+      SETTLEMENT_SHARDS: ${SETTLEMENT_SHARDS:-16}
+      CODE_FAULT_SUFFIX: ${CODE_FAULT_SUFFIX:-}
+      MODE: colocated
+      VARIANT: b
+      TEMPORAL_ADDR: toxiproxy:18003
+    cpus: 1.0
+    mem_limit: 1g
+    networks:
+      default: {ipv4_address: 172.30.0.201}
+  payment-2:
+    <<: *payment
+    networks:
+      default: {ipv4_address: 172.30.0.202}
+  lb:
+    depends_on: [payment-1, payment-2]

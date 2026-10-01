@@ -1,0 +1,58 @@
+name: ibps
+# V1a: Temporal baseline. Ingress and workers are separate deployments; the 2 CPU payment budget is split
+# 0.3 (ingress) + 0.7 (worker) per replica pair. Use with shared.yml and v1.yml.
+x-common: &common
+  image: ibps-bench:local
+  depends_on: {temporal-ns: {condition: service_completed_successfully}, app-db: {condition: service_healthy}}
+services:
+  ingress-1: &ingress
+    <<: *common
+    command: ["payment-temporal"]
+    environment: &ingressenv
+      CBS_URL: http://toxiproxy:18001
+      AML_URL: http://toxiproxy:18002
+      NPC_URL: http://sim-npc:9000
+      APP_DB_URL: postgres://bench:bench@app-db:5432/app?sslmode=disable&pool_max_conns=20
+      GOMAXPROCS: "1"
+      GOMEMLIMIT: 700MiB
+      GOGC: "100"
+      SETTLEMENT_SHARDS: ${SETTLEMENT_SHARDS:-16}
+      CODE_FAULT_SUFFIX: ${CODE_FAULT_SUFFIX:-}
+      MODE: ingress
+      VARIANT: a
+      TEMPORAL_ADDR: toxiproxy:18003
+    cpus: 0.3
+    mem_limit: 512m
+    networks:
+      default: {ipv4_address: 172.30.0.201}
+  ingress-2:
+    <<: *ingress
+    networks:
+      default: {ipv4_address: 172.30.0.202}
+  worker-1: &worker
+    <<: *common
+    command: ["payment-temporal"]
+    environment: &workerenv
+      CBS_URL: http://toxiproxy:18001
+      AML_URL: http://toxiproxy:18002
+      NPC_URL: http://sim-npc:9000
+      APP_DB_URL: postgres://bench:bench@app-db:5432/app?sslmode=disable&pool_max_conns=20
+      GOMAXPROCS: "1"
+      GOMEMLIMIT: 700MiB
+      GOGC: "100"
+      SETTLEMENT_SHARDS: ${SETTLEMENT_SHARDS:-16}
+      CODE_FAULT_SUFFIX: ${CODE_FAULT_SUFFIX:-}
+      MODE: worker
+      VARIANT: a
+      TEMPORAL_ADDR: toxiproxy:18003
+    cpus: 0.7
+    mem_limit: 512m
+    networks:
+      default: {ipv4_address: 172.30.0.203}
+  worker-2:
+    <<: *worker
+    networks:
+      default: {ipv4_address: 172.30.0.204}
+  lb:
+    depends_on: [ingress-1, ingress-2]
+    environment: {UPSTREAM_1: ingress-1, UPSTREAM_2: ingress-2}

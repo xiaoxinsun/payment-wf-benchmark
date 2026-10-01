@@ -1,0 +1,101 @@
+# Temporal server config (self-hosted, Postgres persistence). numHistoryShards is fixed
+# before the first run and must not change afterwards (it is immutable per cluster).
+log:
+  stdout: true
+  level: info
+
+persistence:
+  numHistoryShards: 512
+  defaultStore: default
+  visibilityStore: visibility
+  datastores:
+    default:
+      sql:
+        pluginName: "postgres12"
+        databaseName: "temporal"
+        connectAddr: "temporal-db:5432"
+        connectProtocol: "tcp"
+        user: "temporal"
+        password: "temporal"
+        maxConns: 30
+        maxIdleConns: 30
+        maxConnLifetime: "1h"
+    visibility:
+      sql:
+        pluginName: "postgres12"
+        databaseName: "temporal_visibility"
+        connectAddr: "temporal-db:5432"
+        connectProtocol: "tcp"
+        user: "temporal"
+        password: "temporal"
+        maxConns: 10
+        maxIdleConns: 10
+        maxConnLifetime: "1h"
+
+global:
+  membership:
+    maxJoinDuration: 30s
+    broadcastAddress: "127.0.0.1"
+  pprof:
+    port: 7936
+  metrics:
+    prometheus:
+      framework: "tally"
+      timerType: "histogram"
+      listenAddress: "0.0.0.0:8000"
+
+services:
+  frontend:
+    rpc:
+      grpcPort: 7233
+      httpPort: 7243
+      membershipPort: 6933
+      bindOnIP: "0.0.0.0"
+  matching:
+    rpc:
+      grpcPort: 7235
+      membershipPort: 6935
+      bindOnIP: "0.0.0.0"
+  history:
+    rpc:
+      grpcPort: 7234
+      membershipPort: 6934
+      bindOnIP: "0.0.0.0"
+  worker:
+    rpc:
+      grpcPort: 7239
+      membershipPort: 6939
+      bindOnIP: "0.0.0.0"
+
+clusterMetadata:
+  enableGlobalNamespace: false
+  failoverVersionIncrement: 10
+  masterClusterName: "active"
+  currentClusterName: "active"
+  clusterInformation:
+    active:
+      enabled: true
+      initialFailoverVersion: 1
+      rpcName: "frontend"
+      rpcAddress: "localhost:7233"
+      httpAddress: "localhost:7243"
+
+dcRedirectionPolicy:
+  policy: "noop"
+
+archival:
+  history:
+    state: "disabled"
+  visibility:
+    state: "disabled"
+
+namespaceDefaults:
+  archival:
+    history:
+      state: "disabled"
+    visibility:
+      state: "disabled"
+
+dynamicConfigClient:
+  filepath: "/etc/temporal/dynamicconfig/dynamic.yaml"
+  pollInterval: "10s"

@@ -1,5 +1,7 @@
 # Workflow data isolation: don't store the domain object in Temporal's own store
 
+**See also:** [`workflow-engine-data-isolation.md`](./workflow-engine-data-isolation.md) generalizes this beyond Temporal — surveying Azure Durable Functions, Camunda, Netflix Conductor, AWS Step Functions and Apache Airflow, plus the Claim Check pattern and Fowler's Event Notification / Event-Carried State Transfer distinction this all traces back to.
+
 **TL;DR:** Pass the workflow an identifier (and a few small, immutable control-flow values), not the full domain object. Let activities load and persist the actual business data from your own database.
 
 **On sourcing, up front:** no single official Temporal document states this exact principle — "separate workflow/orchestration data from business domain data" — as a named rule. What follows is a pattern assembled from several real, independently-verified pieces of Temporal guidance, each of which supports part of the recommendation from a different angle (determinism, payload size, PII containment). None of them individually makes the general claim; the synthesis is mine. Each source below is quoted directly, and the gap between what it says and what it's being used to support is called out explicitly.
